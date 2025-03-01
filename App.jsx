@@ -22,7 +22,12 @@ function dfs(
   if (operation === OPERATION.DEL && currPath === targetPath) {
     return null;
   }
-
+  
+  /**
+   * Only need to change the targetNode
+   * and propogate change upward to have new references
+   * no need to propogate downward
+   */
   if (operation === OPERATION.ADD && currPath === targetPath) {
     return {
       ...folders,
