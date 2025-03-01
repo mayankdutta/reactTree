@@ -22,7 +22,7 @@ function dfs(
   if (operation === OPERATION.DEL && currPath === targetPath) {
     return null;
   }
-  
+
   /**
    * Only need to change the targetNode
    * and propogate change upward to have new references
@@ -173,10 +173,10 @@ function App() {
          */}
         {!enableRenaming.has(currPath) && (
           <div className="folder">
-            <span onClick={() => handleExpand(currPath)} className="expand">
-              {collapseFolder.has(currPath) ? "+ " : "- "}
-            </span>
-            {folders.name}
+            <button onClick={() => handleExpand(currPath)} className="expand">
+              {collapseFolder.has(currPath) ? "++" : "--"}
+            </button>
+            {`${folders.name}/`}
             <button onClick={() => handleEnableRename(currPath)}>edit</button>
             <button onClick={() => handleDelete(currPath)}>delete</button>
             <button onClick={() => handleEnableAdding(currPath)}>
@@ -214,7 +214,13 @@ function App() {
     );
   };
 
-  return renderFileStructure(folderStructure);
+  return (
+    <div>
+      <button>select all</button>
+      <button>toggle expand/contract</button>
+      {renderFileStructure(folderStructure)}
+    </div>
+  );
 }
 
 export default App;
