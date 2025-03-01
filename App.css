@@ -1,0 +1,25 @@
+/* .folder {
+  margin-left: 50px;
+} */
+
+div {
+  margin-top: 5px;
+}
+
+.folderChildren {
+  margin-left: 50px;
+}
+
+.file {
+  margin-left: 50px;
+}
+
+.expand {
+  cursor: pointer;
+}
+
+button {
+  border: 1px solid black;
+  font-weight: lighter;
+  font-size: small;
+}
